@@ -346,7 +346,7 @@ public class InvoiceServiceImpl implements InvoiceService {
                 .invoiceId(result.getId())
                 .fileName(result.getFileName())
                 .downloadPath(
-                        baseUrl + "/invoices/download/" + result.getId()
+                        baseUrl + "/api/invoices/download/" + result.getId()
                 )
                 .status(HttpStatus.OK.value())
                 .message("Invoice Generated Successfully")
@@ -361,7 +361,7 @@ public class InvoiceServiceImpl implements InvoiceService {
         return InvoiceResponseDto.builder()
                 .invoiceId(invoiceEntity.getId())
                 .fileName(invoiceEntity.getFileName())
-                .downloadPath(baseUrl + "/invoices/download/" + id)
+                .downloadPath(baseUrl + "/api/invoices/download/" + id)
                 .status(HttpStatus.OK.value())
                 .message("Invoice downloaded Successfully")
                 .contentType(invoiceEntity.getContentType())
